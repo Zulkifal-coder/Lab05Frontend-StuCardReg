@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Registration Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Student Registration</h1>
+
+  <div class="container">
+    <form id="regForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+      <p class="error" id="nameError"></p>
+
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Enter your email">
+      <p class="error" id="emailError"></p>
+
+      <label for="program">Program</label>
+      <select id="program">
+        <option value="">Select program</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Software Engineering">Software Engineering</option>
+        <option value="Business">Business</option>
+      </select>
+      <p class="error" id="programError"></p>
+
+      <label for="semester">Semester</label>
+      <input type="number" id="semester" placeholder="1 to 8">
+      <p class="error" id="semesterError"></p>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="card" id="card">
+      <h2>Preview Card</h2>
+      <p>Name: <span id="previewName">-</span></p>
+      <p>Email: <span id="previewEmail">-</span></p>
+      <p>Program: <span id="previewProgram">-</span></p>
+      <p>Semester: <span id="previewSemester">-</span></p>
+      <button type="button" id="modeBtn">Dark Mode</button>
+    </div>
+  </div>
+
+  <h2>Registered Students</h2>
+  <ul id="studentList"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
