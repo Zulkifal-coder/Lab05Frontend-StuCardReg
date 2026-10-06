@@ -1,53 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Student Registration Card</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Student Registration</h1>
+    <main class="app">
+        <h1>To-Do List</h1>
 
-  <div class="container">
-    <form id="regForm">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter your name">
-      <p class="error" id="nameError"></p>
+        <form id="task-form" novalidate>
+            <input type="text" id="task-input" placeholder="Add a new task" autocomplete="off">
+            <button type="submit" class="btn-primary">Add</button>
+        </form>
 
-      <label for="email">Email</label>
-      <input type="text" id="email" placeholder="Enter your email">
-      <p class="error" id="emailError"></p>
+        <p id="error-message" class="error" role="alert"></p>
 
-      <label for="program">Program</label>
-      <select id="program">
-        <option value="">Select program</option>
-        <option value="Computer Science">Computer Science</option>
-        <option value="Software Engineering">Software Engineering</option>
-        <option value="Business">Business</option>
-      </select>
-      <p class="error" id="programError"></p>
+        <div class="counter">
+            <span>Total: <strong id="total-count">0</strong></span>
+            <span>Remaining: <strong id="remaining-count">0</strong></span>
+        </div>
 
-      <label for="semester">Semester</label>
-      <input type="number" id="semester" placeholder="1 to 8">
-      <p class="error" id="semesterError"></p>
+        <div id="filters" class="filters">
+            <button type="button" class="filter-btn active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="active">Active</button>
+            <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+        </div>
 
-      <button type="submit">Submit</button>
-    </form>
+        <ul id="task-list" class="task-list"></ul>
 
-    <div class="card" id="card">
-      <h2>Preview Card</h2>
-      <p>Name: <span id="previewName">-</span></p>
-      <p>Email: <span id="previewEmail">-</span></p>
-      <p>Program: <span id="previewProgram">-</span></p>
-      <p>Semester: <span id="previewSemester">-</span></p>
-      <button type="button" id="modeBtn">Dark Mode</button>
-    </div>
-  </div>
+        <button type="button" id="clear-completed" class="btn-secondary">Clear completed</button>
+    </main>
 
-  <h2>Registered Students</h2>
-  <ul id="studentList"></ul>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
